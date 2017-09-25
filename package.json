@@ -4,6 +4,7 @@
   "description": "Decorate Stratic files with standard useful information",
   "main": "index.js",
   "dependencies": {
+    "stratic-handle-offset": "^1.0.0",
     "through2": "^2.0.0"
   },
   "scripts": {

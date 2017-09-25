@@ -16,9 +16,23 @@
 'use strict';
 
 var through2 = require('through2');
+var handleOffset = require('stratic-handle-offset');
 
 module.exports = function() {
 	return through2.obj(function(file, enc, callback) {
+		var moment = file.data.moment = handleOffset(file.data.time);
+
+		file.data.time.year = moment.year();
+		file.data.time.yearStr = moment.format('YYYY');
+
+		file.data.time.month = moment.month();
+		file.data.time.monthName = moment.format('MMMM');
+		file.data.time.monthStr = moment.format('M');
+		file.data.time.monthUrlStr = moment.format('MM');
+
+		file.data.time.dayOfMonth = moment.date();
+		file.data.time.dayOfMonthStr = moment.format('D');
+
 		this.push(file);
 		callback();
 	});
