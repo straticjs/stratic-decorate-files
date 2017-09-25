@@ -2,7 +2,7 @@
 
 `stratic-decorate-files` follows [Semantic Versioning][1].
 
-## 1.0.0 - Future
+## 1.0.0 - 2017-09-25
 
 ### Added
 
