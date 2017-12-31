@@ -37,6 +37,7 @@ module.exports = function() {
 	return through2.obj(function(file, enc, callback) {
 
 		decorateProperty(file.data.time);
+		if (file.data.edited) decorateProperty(file.data.edited);
 
 		this.push(file);
 		callback();

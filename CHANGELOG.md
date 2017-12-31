@@ -8,6 +8,10 @@
 
 * The MomentJS object is now exposed on `file.data.time.moment`, not `file.data.moment` (adjusts implementation to match documentation)
 
+### Added
+
+* `file.data.edited` is also decorated if available
+
 ## 1.0.0 - 2017-09-25
 
 ### Added

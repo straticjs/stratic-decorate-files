@@ -70,7 +70,7 @@ gulp.task('post-index', function() {
 
 ## Properties
 
-Each of these properties is attached to `file.data.time`; e.g. `file.data.time.year` for `year`.
+Each of these properties is attached to `file.data.time`; e.g. `file.data.time.year` for `year`. If `file.data.edited` is present, it also gets these properties attached.
 
 `moment` (`Object`) - a [MomentJS][] moment, preconfigured to handle the offset. Use this if what you need isn't already exposed.
 
