@@ -18,20 +18,24 @@
 var through2 = require('through2');
 var handleOffset = require('stratic-handle-offset');
 
+function decorateProperty(moment, prop) {
+	prop.year = moment.year();
+	prop.yearStr = moment.format('YYYY');
+
+	prop.month = moment.month();
+	prop.monthName = moment.format('MMMM');
+	prop.monthStr = moment.format('M');
+	prop.monthUrlStr = moment.format('MM');
+
+	prop.dayOfMonth = moment.date();
+	prop.dayOfMonthStr = moment.format('D');
+}
+
 module.exports = function() {
 	return through2.obj(function(file, enc, callback) {
 		var moment = file.data.moment = handleOffset(file.data.time);
 
-		file.data.time.year = moment.year();
-		file.data.time.yearStr = moment.format('YYYY');
-
-		file.data.time.month = moment.month();
-		file.data.time.monthName = moment.format('MMMM');
-		file.data.time.monthStr = moment.format('M');
-		file.data.time.monthUrlStr = moment.format('MM');
-
-		file.data.time.dayOfMonth = moment.date();
-		file.data.time.dayOfMonthStr = moment.format('D');
+		decorateProperty(moment, file.data.time);
 
 		this.push(file);
 		callback();
