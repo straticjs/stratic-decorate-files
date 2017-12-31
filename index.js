@@ -18,7 +18,9 @@
 var through2 = require('through2');
 var handleOffset = require('stratic-handle-offset');
 
-function decorateProperty(moment, prop) {
+function decorateProperty(prop) {
+	var moment = prop.moment = handleOffset(prop);
+
 	prop.year = moment.year();
 	prop.yearStr = moment.format('YYYY');
 
@@ -33,9 +35,8 @@ function decorateProperty(moment, prop) {
 
 module.exports = function() {
 	return through2.obj(function(file, enc, callback) {
-		var moment = file.data.moment = handleOffset(file.data.time);
 
-		decorateProperty(moment, file.data.time);
+		decorateProperty(file.data.time);
 
 		this.push(file);
 		callback();
