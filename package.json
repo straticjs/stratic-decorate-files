@@ -1,6 +1,6 @@
 {
   "name": "stratic-decorate-files",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Decorate Stratic files with standard useful information",
   "main": "index.js",
   "dependencies": {
