@@ -105,7 +105,7 @@ LGPL 3.0+
 AJ Jordan <alex@strugee.net>
 
  [1]: http://gulpjs.com/
- [2]: https://github.com/strugee/generator-stratic
+ [2]: https://github.com/straticjs/generator-stratic
  [3]: http://contributor-covenant.org/
  [4]: https://github.com/straticjs/stratic-decorate-files/blob/master/CODE_OF_CONDUCT.md
  [MomentJS]: https://momentjs.com/
